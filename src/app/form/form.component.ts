@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MessengerService} from '../messenger.service';
+import {MessengerService, Message} from '../messenger.service';
 
 @Component({
   selector: 'app-form',
@@ -12,13 +12,20 @@ export class FormComponent implements OnInit {
 
   url: string;
   content: string;
+  username = '';
 
   ngOnInit() {
   }
 
-  send() {
-    console.log(this.url, this.content);
-    this.messenger.send(this.url, this.content);
+  handleSend() {
+    const message: Message = {
+      content: this.content
+    };
+    if (this.username.length >= 2) {
+      message.username = this.username;
+    }
+    console.log(message);
+    this.messenger.send(this.url, message);
   }
 
 }

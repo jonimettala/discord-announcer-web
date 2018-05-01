@@ -6,6 +6,10 @@
   <mat-form-field>
     <textarea matInput placeholder="Message" rows="7" [(ngModel)]="content"></textarea>
   </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Username" [(ngModel)]="username">
+  </mat-form-field>
 </div>
 
-<button mat-raised-button color="primary" (click)="send()">Announce!</button>
+<button mat-raised-button color="primary" (click)="handleSend()">Announce!</button>
