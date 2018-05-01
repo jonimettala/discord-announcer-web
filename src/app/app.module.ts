@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -9,6 +11,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
 
+import { MessengerService } from './messenger.service';
+
 
 @NgModule({
   declarations: [
@@ -17,12 +21,14 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule,
     MatInputModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [MessengerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

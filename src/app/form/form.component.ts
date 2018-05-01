@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MessengerService} from '../messenger.service';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  constructor() { }
+  constructor(private messenger: MessengerService) { }
+
+  url: string;
+  content: string;
 
   ngOnInit() {
+  }
+
+  send() {
+    console.log(this.url, this.content);
+    this.messenger.send(this.url, this.content);
   }
 
 }
