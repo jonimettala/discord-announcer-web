@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Discord Announcer';
   help = 'Help';
+  helpLink = 'https://github.com/jonimettala/discord-announcer-web/wiki';
 }

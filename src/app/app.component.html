@@ -2,6 +2,13 @@
   <span>{{ title }}</span>
   <span class="nav-spacer"></span>
   <span class="mat-button-wrapper"></span>
+  <span>
+    <a class="mat-button" href={{helpLink}}>
+      <button mat-button>
+        <mat-icon class="nav-icon" aria-hidden="true">help</mat-icon>{{ help }}
+      </button>
+    </a>
+  </span>
 </mat-toolbar>
 
 <div class="content">
