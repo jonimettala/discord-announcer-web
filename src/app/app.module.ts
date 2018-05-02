@@ -7,6 +7,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from './form/form.component';
@@ -26,7 +28,9 @@ import { MessengerService } from './messenger.service';
     BrowserAnimationsModule,
     MatButtonModule, MatCheckboxModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatToolbarModule,
+    MatIconModule
   ],
   providers: [MessengerService],
   bootstrap: [AppComponent]
