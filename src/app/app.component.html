@@ -2,10 +2,17 @@
   <span>{{ title }}</span>
   <span class="nav-spacer"></span>
   <span class="mat-button-wrapper"></span>
-  <span>
-    <a class="mat-button" href={{helpLink}}>
+  <span class="nav-item">
+    <a class="mat-button" href={{helpLink}} target="_blank">
       <button mat-button>
         <mat-icon class="nav-icon" aria-hidden="true">help</mat-icon>{{ help }}
+      </button>
+    </a>
+  </span>
+  <span>
+    <a class="mat-button" href={{changesLink}} target="_blank">
+      <button mat-button>
+        <mat-icon class="nav-icon" aria-hidden="true">history</mat-icon>{{ changes }}
       </button>
     </a>
   </span>

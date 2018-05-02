@@ -9,3 +9,7 @@
 .nav-spacer {
   flex: 1 1 auto;
 }
+
+.nav-item {
+  margin: -25px -25px;
+}
