@@ -2,8 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 export interface Message {
-  content: string;
+  content?: string;
   username?: string;
+  embeds?: MessageEmbed[];
+}
+
+export interface MessageEmbed {
+  title?: string;
+  url?: string;
+  description?: string;
 }
 
 @Injectable()

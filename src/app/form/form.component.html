@@ -10,6 +10,26 @@
   <mat-form-field>
     <input matInput placeholder="Username" [(ngModel)]="username">
   </mat-form-field>
+
+  <mat-checkbox class="button-margin" [(ngModel)]="embeds">Embeds</mat-checkbox>
 </div>
 
-<button mat-raised-button color="primary" (click)="handleSend()">Announce!</button>
+<div [hidden]="!embeds">
+  <div class="form-container">
+    <mat-form-field>
+      <input matInput placeholder="Embed Title" [(ngModel)]="embedTitle">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Embed URL" [(ngModel)]="embedUrl">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Embed Description" rows="7" [(ngModel)]="embedDescription"></textarea>
+    </mat-form-field>
+  </div>
+</div>
+
+<div>
+  <button mat-raised-button color="primary" (click)="handleSend()">Announce!</button>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MessengerService, Message} from '../messenger.service';
+import {MessengerService, Message, MessageEmbed} from '../messenger.service';
 
 @Component({
   selector: 'app-form',
@@ -10,20 +10,44 @@ export class FormComponent implements OnInit {
 
   constructor(private messenger: MessengerService) { }
 
+  // Message general data
   url: string;
-  content: string;
+  content = '';
   username = '';
+
+  // Message embed data
+  embeds = false;
+  embedTitle = '';
+  embedUrl = '';
+  embedDescription = '';
 
   ngOnInit() {
   }
 
   handleSend() {
-    const message: Message = {
-      content: this.content
-    };
+    const message: Message = {};
+    if (this.content.length > 0) {
+      message.content = this.content;
+    }
     if (this.username.length >= 2) {
       message.username = this.username;
     }
+
+    if (this.embeds) {
+      const embedData: MessageEmbed = {};
+        if (this.embedTitle.length > 0) {
+          embedData.title = this.embedTitle;
+        }
+      if (this.embedTitle.length > 0) {
+        embedData.url = this.embedUrl;
+      }
+      if (this.embedDescription.length > 0) {
+          embedData.description = this.embedDescription;
+      }
+      const embeds = [embedData];
+      message.embeds = embeds;
+    }
+
     console.log(message);
     this.messenger.send(this.url, message);
   }
