@@ -20,6 +20,7 @@ export class FormComponent implements OnInit {
   embedTitle = '';
   embedUrl = '';
   embedDescription = '';
+  embedImageUrl = '';
 
   ngOnInit() {
   }
@@ -38,14 +39,16 @@ export class FormComponent implements OnInit {
         if (this.embedTitle.length > 0) {
           embedData.title = this.embedTitle;
         }
-      if (this.embedTitle.length > 0) {
+      if (this.embedTitle.length > 0 && this.embedUrl.length > 0) {
         embedData.url = this.embedUrl;
       }
       if (this.embedDescription.length > 0) {
           embedData.description = this.embedDescription;
       }
-      const embeds = [embedData];
-      message.embeds = embeds;
+      if (this.embedImageUrl.length > 0) {
+          embedData.image = {url: this.embedImageUrl};
+      }
+      message.embeds = [embedData];
     }
 
     console.log(message);

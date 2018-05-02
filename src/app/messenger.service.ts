@@ -11,6 +11,11 @@ export interface MessageEmbed {
   title?: string;
   url?: string;
   description?: string;
+  image?: MessageEmbedImage;
+}
+
+export interface MessageEmbedImage {
+  url: string;
 }
 
 @Injectable()
