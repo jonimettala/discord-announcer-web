@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MessengerService, Message, MessageEmbed} from '../messenger.service';
+import {MessengerService, Message, MessageEmbed, MessageEmbedField} from '../messenger.service';
 
 @Component({
   selector: 'app-form',
@@ -22,10 +22,15 @@ export class FormComponent implements OnInit {
   embedDescription = '';
   embedImageUrl = '';
 
+  // Number of embed fields
+  value = 0;
+
   ngOnInit() {
   }
 
   handleSend() {
+    console.log(this.value);
+    this.value = 3;
     const message: Message = {};
     if (this.content.length > 0) {
       message.content = this.content;
@@ -54,5 +59,4 @@ export class FormComponent implements OnInit {
     console.log(message);
     this.messenger.send(this.url, message);
   }
-
 }

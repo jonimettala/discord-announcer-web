@@ -8,6 +8,7 @@ import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSliderModule} from '@angular/material/slider';
 import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { MessengerService } from './messenger.service';
     MatInputModule,
     MatSelectModule,
     MatToolbarModule,
+    MatSliderModule,
     MatIconModule
   ],
   providers: [MessengerService],
